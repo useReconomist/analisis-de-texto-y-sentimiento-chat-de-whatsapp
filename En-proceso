@@ -1,0 +1,70 @@
+#Este proyecto sigue en proceso por lo que poco a poco irá mejorando :) cualquier recomendación es útil.
+
+#la idea es medir la estabilidad de una relación por las expresiones usadas y la cantidad de mensajes enviados u expresiones.
+#De base de datos usamos una conversación de Whatsapp, en mi caso usé la conversación más larga que tenía con una persona.
+#estas conversaciones son muy útiles ya que al exportarlas indica el día y la hora del mensaje, con lo cuál podré medir la 
+#cantidad de mensajes enviados por hora, día y por mes, incluso aquí podría verse un proceso interesante de las relaciones
+#¿Cuántos mensajes mandabas al día a esa persona en su primer mes? ¿y el siguiente? ¿cuándo dejaste de enviarle mensajes? 
+#¿Cuántas veces le decías (por día-semana-mes) "Te quiero","te Extraño", "Te amo"? ¿Cambió esa cifra con el paso del tiempo? 
+
+#Iniciamos buscando hacia donde está dirigido R
+#para ver donde está dirigido R usamos:
+
+getwd()
+
+#Establecer la dirección de mi trabajo, yo puse que apuntara a mi escritorio porque ahí tengo el archivo 
+#pero tú podrías hacerlo donde diga "descargas" o alguna carpeta específica.
+
+setwd("C:/Users/noe.osorio/Desktop")
+
+#PAQUETES QUE USAREMOS.
+#Si no los tienes, los instalas con el comando:
+
+#"install.packages("tidytext", dependencies = TRUE)"
+
+library(dplyr)
+library(ggplot2)
+library(tm)
+library(NLP)
+library(wordcloud)
+library(RColorBrewer)
+library(syuzhet)
+library(tidyverse)
+library(tidytext)
+
+#Una vez instalados y llamados los paquetes hay que generar la base de datos.
+#Esto es sencillo, abres la app de whatsapp y eliges un chat el que quieras, el que deseas analizar
+#puede ser con un grupo de amigos o el de una persona. Para exportar debes de entrar a la conversación
+#Al entrar a la conversación en la parte superior derecha hay 3 puntos le das clic .. después en "más" y eliges
+#Exportar chat, debes de elegir la opción "Sin archivos" para que únicamente nos deje el texto. (todos estos pasos en la app de whatsapp)
+# y la envías, yo la mandé a mi correo y me llegó un archivo en formato txt.
+
+#Cargar conversación
+#Una vez que de tu correo ya descargaste la conversación y la pusiste en una carpeta
+#creas un objeto el cuál tendrá la conversación o conversaciones 
+#con el comando readLines del paquete base los lee.
+
+txt1 <- readLines("ericaamor.txt") 
+txt2 <- readLines("eri.txt")
+
+#usamos length para saber cuántas líneas tiene el archivo.
+
+length(text1)
+length(text2)
+
+# En mi caso el archivo "Ericaamor" (txt1) tiene 20982 lineas o mensajes que nos mandamos
+# "eri" (text2) tiene 193 lineas o mensajes.
+#estos datos nos sirven para pasarlo a un tibble y separarlo.
+
+text1.df <-tibble(line=1:20982,text=text1)
+text2df <- tibble(line=1:83, text=text2)
+
+#al crearlos en tibble tendremos un archivos de 20:982 filas con 2 columnas
+#los pasé a tibble porque es más fácil
+ya que usando el siguiente comando
+
+#este NO lo uses. Lo menciono como ejemplo.
+text_1 %>% 
+  unnest_tokens(word,text1)
+
+#hace algo parecido sin embargo al contar texto cuénta la primera palabra de la oración y no lo divide por fecha.
