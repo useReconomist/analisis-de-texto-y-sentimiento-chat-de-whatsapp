@@ -45,25 +45,23 @@ library(tidytext)
 #con el comando readLines del paquete base los lee.
 
 txt1 <- readLines("ericaamor.txt") 
-txt2 <- readLines("eri.txt")
 
 #usamos length para saber cuántas líneas tiene el archivo.
 
 length(text1)
-length(text2)
 
-# En mi caso el archivo "Ericaamor" (txt1) tiene 20982 lineas o mensajes que nos mandamos
-# "eri" (text2) tiene 193 lineas o mensajes.
+# En mi caso el archivo "Ericaamor" (txt1) tiene 20582 lineas o mensajes que nos mandamos
 #estos datos nos sirven para pasarlo a un tibble y separarlo.
 
-text1.df <-tibble(line=1:20982,text=text1)
-text2df <- tibble(line=1:83, text=text2)
+text1.df <-tibble(line=1:20582,text=text1)
 
-#al crearlos en tibble tendremos un archivos de 20:982 filas con 2 columnas
+
+#al crearlos en tibble tendremos un archivos de 20582 filas con 2 columnas
 #los pasé a tibble porque es más fácil
 ya que usando el siguiente comando
 
-#este NO lo uses. Lo menciono como ejemplo.
+#(este NO lo uses). Lo menciono como ejemplo.
+
 text_1 %>% 
   unnest_tokens(word,text1)
 
