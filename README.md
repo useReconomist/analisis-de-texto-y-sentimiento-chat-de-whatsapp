@@ -9,6 +9,6 @@
 #¿Cuántos mensajes mandabas al día a esa persona en su primer mes? ¿y el siguiente? ¿cuándo dejaste de enviarle mensajes? 
 #¿Cuántas veces le decías (por día-semana-mes) "Te quiero","te Extraño", "Te amo"? ¿Cambió esa cifra con el paso del tiempo? 
 #Después del proceso de  "enamoramiento" hay un proceso estable en que la cantidad de mensajes se oscila al rededor de una media, mensajes
-# como "llegaste bien" "ya comiste" "te veo" "te quiero" "te extraño", o sea palabras u oraciones que independiente del tiempo se decían
+#Como "llegaste bien" "ya comiste" "te veo" "te quiero" "te extraño", o sea palabras u oraciones que independiente del tiempo se decían
 #Hasta cuando la comunicación se vuelve nula? ¿en qué periodo?
 #¿Que palabras usaban cuando bajó la comunicación?
